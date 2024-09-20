@@ -19,7 +19,8 @@ cd image-extraction-using-mountpoint-s3
 #### Create and activate a Virtual environment
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 #### Install the requirements
@@ -34,6 +35,7 @@ ADDF submits build information to AWS CodeBuild via AWS CodeSeeder.  The initial
 
 ```bash
 export AWS_DEFAULT_REGION=us-west-2
+export AWS_REGION=us-west-2
 ```
 
 > Note: You can set the above region to your region of interest
@@ -46,6 +48,7 @@ We use AWS CDK V2 as the standard CDK version because CDK V1 is set to maintenan
 
 ```bash
 cdk bootstrap aws://<<ACCOUNT_ID>>/$AWS_DEFAULT_REGION
+cdk bootstrap aws://618570812617/$AWS_DEFAULT_REGION
 ```
 
 > Note: Replace the `ACCOUNT_ID` in the above command
@@ -58,6 +61,7 @@ Following is the command to bootstrap your existing account to a toolchain and t
 
 ```sh
 seedfarmer bootstrap toolchain --project addf --trusted-principal [principal-arns] --as-target
+seedfarmer bootstrap toolchain --project addf --trusted-principal arn:aws:iam::618570812617:role/admin --as-target
 ```
 
 > Note: Replace the `principal-arns` in the above command with the IAM role that you would be assuming to access AWS account. Here is an example `seedfarmer bootstrap toolchain --project addf --trusted-principal arn:aws:iam::1234567890:role/Admin --as-target`
