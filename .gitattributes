@@ -1,0 +1,5 @@
+# Declare files that will always have LF line endings on checkout
+* text eol=LF
+
+# Declare files that will always have CRLF line endings on checkout
+*.png binary eol=CRLF

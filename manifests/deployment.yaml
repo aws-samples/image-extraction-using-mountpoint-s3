@@ -10,8 +10,9 @@ groups:
     path: manifests/pre-processing-modules.yaml
 targetAccountMappings:
   - alias: primary
-    accountId: 1234567890
+    accountId: 123456789012 # Adjust to your AWS Account id
     default: true
     regionMappings:
       - region: us-west-2
         default: true
+
