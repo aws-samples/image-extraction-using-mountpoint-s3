@@ -4,6 +4,9 @@ This README.md will provide a step-by-step giude on how to deploy the image extr
 
 This repository was created as part of this AWS blog post: https://aws.amazon.com/blogs/industries
 
+The high-level overview of the solution is shown in the image below:
+![Overview](docs/Solution_overview.png)
+
 ## Clone the project
 
 You will need to clone the repository using the below command:
